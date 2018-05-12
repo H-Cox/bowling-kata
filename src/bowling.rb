@@ -10,7 +10,7 @@ class BowlingGame
 		if @roundGo == 1
 			@roundGo = 2
 		elsif @roundGo == 2
-			@round = 2
+			@round += 1
 			@roundGo =1
 		end
 
