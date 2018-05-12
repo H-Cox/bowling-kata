@@ -23,16 +23,29 @@ class BowlingGame
 			if @previousRoll+numeric == 10
 				@spare = true
 			end
-			
+
+		end
+
+		strikemultiply = 0
+		if @strike2
+			@strike2 = false
+			strikemultiply += 1
+		end
+
+		if @strike1
+			@strike2 = true
+			@strike1 = false
+			strikemultiply += 1
 		end
 
 		if numeric == 10
 			@round = 2
+			@strike1 = true
 		end
 
 		@previousRoll = numeric
 
-		@score += numeric*multi
+		@score += numeric*(multi+strikemultiply)
 	end
 
 	def score

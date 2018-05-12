@@ -114,5 +114,22 @@ describe BowlingGame do
         expect(game.score).to eql(47)
       end      	
     end
+
+    context "a game with no final strike/spare ends in 10 rounds" do
+      it "game ends after 10 rounds" do
+      	game = BowlingGame.new
+      	game.startGame
+      	# do 10 rounds
+      	scores = [10,10,3,4,1,2,3,4,5,6,1,2,3,4,5,6,2,3]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+      	# do some more and ensure score doesn't change
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(94)
+      end      	
+    end
   end
 end
