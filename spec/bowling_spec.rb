@@ -102,5 +102,17 @@ describe BowlingGame do
         expect(game.score).to eql(16)
       end      	
     end
+
+    context "correct strike scoring rule" do
+      it "score goes to 16" do
+      	game = BowlingGame.new
+      	game.startGame
+      	scores = [10,10,3,4]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(47)
+      end      	
+    end
   end
 end
