@@ -63,6 +63,18 @@ describe BowlingGame do
       	game.bowl(1)
         expect(game.round).to eql(2)
       end
+    end
+
+	context "play through 3 rounds (no strike/spare)" do
+      it "round goes to 4" do
+      	game = BowlingGame.new
+      	game.startGame
+      	scores = [1,2,3,4,5,6]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.round).to eql(4)
+      end
     end 
   end
 end

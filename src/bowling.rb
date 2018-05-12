@@ -2,9 +2,18 @@ class BowlingGame
 	def startGame
 		@score = 0
 		@round = 1
+		@roundGo = 1
 	end
 
 	def bowl(numeric)
+
+		if @roundGo == 1
+			@roundGo = 2
+		elsif @roundGo == 2
+			@round = 2
+			@roundGo =1
+		end
+
 		if numeric == 10
 			@round = 2
 		end
