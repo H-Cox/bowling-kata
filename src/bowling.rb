@@ -8,7 +8,8 @@ class BowlingGame
 		if numeric == 10
 			@round = 2
 		end
-		numeric
+
+		@score = numeric
 	end
 
 	def score
