@@ -50,6 +50,9 @@ class BowlingGame
 		@previousRoll = numeric
 
 		@score += numeric*(multi+strikemultiply)
+		elsif @round == 11 && @spare
+			@score += numeric
+			@spare = false
 		end
 	end
 

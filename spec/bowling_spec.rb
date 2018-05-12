@@ -148,5 +148,6 @@ describe BowlingGame do
         expect(game.score).to eql(29)
       end      	
     end
+
   end
 end
