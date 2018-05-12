@@ -30,16 +30,15 @@ class BowlingGame
 
 		end
 
-		strikemultiply = 0
 		if @strike2
 			@strike2 = false
-			strikemultiply += 1
+			multi += 1
 		end
 
 		if @strike1
 			@strike2 = true
 			@strike1 = false
-			strikemultiply += 1
+			multi += 1
 		end
 
 		if numeric == 10
@@ -49,7 +48,7 @@ class BowlingGame
 
 		@previousRoll = numeric
 
-		@score += numeric*(multi+strikemultiply)
+		@score += numeric*(multi)
 		elsif @round == 11 && @spare
 			@score += numeric
 			@spare = false
