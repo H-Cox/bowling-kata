@@ -44,5 +44,13 @@ describe BowlingGame do
         expect(game.round).to eql(2)
       end
     end 
+
+    context "score of less than 10 doesn't increase round" do
+      it "round increases" do
+      	game = BowlingGame.new
+      	game.bowl(9)
+        expect(game.round).to eql(1)
+      end
+    end 
   end
 end

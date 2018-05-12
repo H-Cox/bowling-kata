@@ -5,6 +5,9 @@ class BowlingGame
 	end
 
 	def bowl(numeric)
+		if numeric == 10
+			@round = 2
+		end
 		numeric
 	end
 
