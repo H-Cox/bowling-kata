@@ -55,11 +55,11 @@ describe BowlingGame do
       end
     end
 
-    context "two bowls in same round sum to 10, spare and round increases" do
+    context "after 2nd bowl in round go to next round" do
       it "round stays the same" do
       	game = BowlingGame.new
       	game.startGame
-      	game.bowl(9)
+      	game.bowl(4)
       	game.bowl(1)
         expect(game.round).to eql(2)
       end
