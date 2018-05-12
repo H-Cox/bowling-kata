@@ -77,16 +77,17 @@ describe BowlingGame do
       end
     end
 
-    context "if a spare next roll is added to previous frame" do
-      it "score is increased" do
+	context "play through 3 rounds (no strike/spare)" do
+      it "score goes to 4" do
       	game = BowlingGame.new
       	game.startGame
-      	scores = [8,2,3]
+      	scores = [1,2,3,4,5,6]
       	scores.each do |item|
       		game.bowl(item)
       	end
-        expect(game.score).to eql(16)
+        expect(game.score).to eql(21)
       end
-    end 
+    end
+    
   end
 end
