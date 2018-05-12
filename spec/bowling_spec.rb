@@ -37,5 +37,12 @@ describe BowlingGame do
       end
     end 
 
+    context "score of 10 is a strike and go to next round" do
+      it "round increases" do
+      	game = BowlingGame.new
+      	game.bowl(10)
+        expect(game.round).to eql(2)
+      end
+    end 
   end
 end
