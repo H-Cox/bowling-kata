@@ -9,6 +9,14 @@ describe BowlingGame do
 		expect(game.score).to eq(0)
 	  end
 	end
+
+	context "Start game on round 1" do
+	  it "has round 1" do
+		game = BowlingGame.new
+		game.startGame
+		expect(game.round).to eq(1)
+	  end
+	end
   end
 
   describe ".bowl" do
