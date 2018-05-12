@@ -8,6 +8,9 @@ RSpec.describe Bowling do
   		expect(bowl).to eq(0)
   	end
 
-    
+    it "returns 1 for 1" do
+    	bowl = Bowling.bowl 1
+    	expect(bowl).to eq(1)
+    end
   end
 end
