@@ -1,6 +1,15 @@
 require_relative '../src/bowling'
 
 describe BowlingGame do
+	describe ".startGame" do
+	context "Start game with score zero" do
+	  it "has score zero"
+		game = BowlingGame.new
+		game.startGame
+		expect(game.score).to eq(0)
+	  end 
+  end
+
 	describe ".bowl" do
 
     context "given zero" do

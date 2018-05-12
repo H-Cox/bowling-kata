@@ -1,5 +1,5 @@
 class BowlingGame
 	def bowl(numeric)
-		return 0
+		return numeric
 	end
 end
