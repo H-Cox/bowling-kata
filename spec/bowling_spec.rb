@@ -120,7 +120,7 @@ describe BowlingGame do
       	game = BowlingGame.new
       	game.startGame
       	# do 10 rounds
-      	scores = [10,10,3,4,1,2,3,4,5,6,1,2,3,4,5,6,2,3]
+      	scores = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
       	scores.each do |item|
       		game.bowl(item)
       	end
@@ -128,7 +128,24 @@ describe BowlingGame do
       	scores.each do |item|
       		game.bowl(item)
       	end
-        expect(game.score).to eql(94)
+        expect(game.score).to eql(20)
+      end      	
+    end
+
+    context "a game ends with a spare" do
+      it "final roll counts" do
+      	game = BowlingGame.new
+      	game.startGame
+      	# do 10 rounds
+      	scores = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,9]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+      	# do some more and ensure score doesn't change
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(29)
       end      	
     end
   end

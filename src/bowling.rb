@@ -6,6 +6,10 @@ class BowlingGame
 	end
 
 	def bowl(numeric)
+
+		if @round <= 10
+
+
 		multi = 1
 
 		if @roundGo == 1
@@ -39,13 +43,14 @@ class BowlingGame
 		end
 
 		if numeric == 10
-			@round = 2
+			@round += 1
 			@strike1 = true
 		end
 
 		@previousRoll = numeric
 
 		@score += numeric*(multi+strikemultiply)
+		end
 	end
 
 	def score
