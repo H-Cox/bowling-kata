@@ -18,7 +18,7 @@ class BowlingGame
 			@round = 2
 		end
 
-		@score = numeric
+		@score += numeric
 	end
 
 	def score

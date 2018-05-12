@@ -24,6 +24,7 @@ describe BowlingGame do
     context "given zero" do
       it "returns zero" do
       	game = BowlingGame.new
+      	game.startGame
       	game.bowl(0)
         expect(game.score).to eql(0)
       end
@@ -32,6 +33,7 @@ describe BowlingGame do
     context "given 1" do
       it "returns 1" do
       	game = BowlingGame.new
+      	game.startGame
       	game.bowl(1)
         expect(game.score).to eql(1)
       end
@@ -88,6 +90,17 @@ describe BowlingGame do
         expect(game.score).to eql(21)
       end
     end
-    
+
+    context "correct spare scoring rule" do
+      it "score goes to 16" do
+      	game = BowlingGame.new
+      	game.startGame
+      	scores = [8,2,3]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(16)
+      end      	
+    end
   end
 end
