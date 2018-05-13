@@ -3,15 +3,10 @@ require_relative 'src/bowling'
 game = BowlingGame.new
 game.startGame
 
-scores = [10,10,10,10,10,10,10,10,10,10,10,10]
+scores = [2,4,1,0,10,5,5,9,0,10,10,4,4,7,3,4,6,2]
 scores.each do |item|
     game.bowl(item)
-    puts game.score
-    puts game.round
-end
-      	# do some more and ensure score doesn't change
-scores.each do |item|
-	game.bowl(item)
-	puts game.score
-	puts game.round
+
+    string = "Current score: #{game.score}. Current round: #{game.round}."
+    puts string
 end

@@ -145,7 +145,7 @@ describe BowlingGame do
       	scores.each do |item|
       		game.bowl(item)
       	end
-        expect(game.score).to eql(30)
+        expect(game.score).to eql(29)
       end      	
     end
 
@@ -180,6 +180,23 @@ describe BowlingGame do
       		game.bowl(item)
       	end
         expect(game.score).to eql(300)
+      end      	
+    end
+
+    context "example game" do
+      it "score is 131" do
+      	game = BowlingGame.new
+      	game.startGame
+      	# do 10 rounds
+      	scores = [2,4,1,0,10,5,5,9,0,10,10,4,4,7,3,4,6,2]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+      	# do some more and ensure score doesn't change
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(131)
       end      	
     end
 

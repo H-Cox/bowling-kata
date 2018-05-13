@@ -18,6 +18,7 @@ class BowlingGame
 
 			if @spare
 				multi = 2
+				@spare = false
 			end
 
 		elsif @roundGo == 2
@@ -53,7 +54,7 @@ class BowlingGame
 
 		elsif @round == 11 && @spare
 
-			@score += numeric*2
+			@score += numeric
 			@spare = false
 
 		elsif @round == 11 && @strike1
@@ -72,26 +73,7 @@ class BowlingGame
 			@round += 1
 
 		end
-		"""
-		elsif @round >=11 && @round < 13 && (@strike1 || @strike2)
 
-			multi = 1
-
-			if @strike2
-				@strike2 = false
-				multi += 1
-			end
-
-			if @strike1
-				@strike2 = true
-				@strike1 = false
-			end
-
-			@round += 1
-			@score += numeric*multi
-
-		end
-		"""
 	end
 
 	def score
