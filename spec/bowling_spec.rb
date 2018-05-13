@@ -200,5 +200,22 @@ describe BowlingGame do
       end      	
     end
 
+    context "another example game" do
+      it "score is 99" do
+      	game = BowlingGame.new
+      	game.startGame
+      	# do 10 rounds
+      	scores = [4,6,10,8,1,5,2,4,6,6,0,1,0,2,3,4,3,7,2]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+      	# do some more and ensure score doesn't change
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(99)
+      end      	
+    end
+
   end
 end
