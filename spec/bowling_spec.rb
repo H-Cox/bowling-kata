@@ -80,7 +80,7 @@ describe BowlingGame do
     end
 
 	context "play through 3 rounds (no strike/spare)" do
-      it "score goes to 4" do
+      it "score goes to 21" do
       	game = BowlingGame.new
       	game.startGame
       	scores = [1,2,3,4,5,6]
@@ -104,7 +104,7 @@ describe BowlingGame do
     end
 
     context "correct strike scoring rule" do
-      it "score goes to 16" do
+      it "score goes to 47" do
       	game = BowlingGame.new
       	game.startGame
       	scores = [10,10,3,4]
