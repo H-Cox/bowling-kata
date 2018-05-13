@@ -44,6 +44,7 @@ class BowlingGame
 		if numeric == 10
 			@round += 1
 			@strike1 = true
+			@roundGo = 1
 		end
 
 		@previousRoll = numeric
@@ -55,6 +56,23 @@ class BowlingGame
 			@score += numeric*2
 			@spare = false
 
+		elsif @round == 11 && @strike1
+
+			if @strike2
+				@score += numeric*2
+			else
+				@score += numeric
+			end
+
+			@round +=1
+
+		elsif @round == 12 && @strike2
+
+			@score += numeric
+			@round += 1
+
+		end
+		"""
 		elsif @round >=11 && @round < 13 && (@strike1 || @strike2)
 
 			multi = 1
@@ -67,13 +85,13 @@ class BowlingGame
 			if @strike1
 				@strike2 = true
 				@strike1 = false
-				multi += 1
 			end
-			
+
 			@round += 1
 			@score += numeric*multi
 
 		end
+		"""
 	end
 
 	def score
