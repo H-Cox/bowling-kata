@@ -145,7 +145,7 @@ describe BowlingGame do
       	scores.each do |item|
       		game.bowl(item)
       	end
-        expect(game.score).to eql(29)
+        expect(game.score).to eql(30)
       end      	
     end
 
