@@ -1,5 +1,8 @@
 class BowlingGame
-	def startGame
+
+	attr_reader :score, :round
+
+	def initialize
 		@score = 0
 		@round = 1
 		@roundGo = 1
@@ -9,15 +12,14 @@ class BowlingGame
 
 		if @round <= 10
 
-
-		multi = 1
+		multiplier = 1
 
 		if @roundGo == 1
 			@roundGo = 2
 			@previousRoll = 0
 
 			if @spare
-				multi = 2
+				multiplier = 2
 				@spare = false
 			end
 
@@ -33,13 +35,13 @@ class BowlingGame
 
 		if @strike2
 			@strike2 = false
-			multi += 1
+			multiplier += 1
 		end
 
 		if @strike1
 			@strike2 = true
 			@strike1 = false
-			multi += 1
+			multiplier += 1
 		end
 
 		if numeric == 10
@@ -50,7 +52,7 @@ class BowlingGame
 
 		@previousRoll = numeric
 
-		@score += numeric*(multi)
+		@score += numeric*(multiplier)
 
 		elsif @round == 11 && @spare
 
@@ -76,10 +78,4 @@ class BowlingGame
 
 	end
 
-	def score
-		@score
-	end
-	def round
-		@round
-	end
 end
