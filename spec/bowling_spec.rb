@@ -149,7 +149,7 @@ describe BowlingGame do
       end      	
     end
 
-    context "a game ends with a strike 1" do
+    context "a game ends with a strike" do
       it "final roll counts" do
       	game = BowlingGame.new
       	game.startGame
@@ -163,6 +163,23 @@ describe BowlingGame do
       		game.bowl(item)
       	end
         expect(game.score).to eql(32)
+      end      	
+    end
+
+    context "a perfect game" do
+      it "score is 300" do
+      	game = BowlingGame.new
+      	game.startGame
+      	# do 10 rounds
+      	scores = [10,10,10,10,10,10,10,10,10,10,10,10]
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+      	# do some more and ensure score doesn't change
+      	scores.each do |item|
+      		game.bowl(item)
+      	end
+        expect(game.score).to eql(300)
       end      	
     end
 

@@ -52,13 +52,26 @@ class BowlingGame
 
 		elsif @round == 11 && @spare
 
-			@score += numeric
+			@score += numeric*2
 			@spare = false
 
-		elsif @round == 11 && @strike1
+		elsif @round >=11 && @round < 13 && (@strike1 || @strike2)
 
-			@score += numeric
-			@spare = false
+			multi = 1
+
+			if @strike2
+				@strike2 = false
+				multi += 1
+			end
+
+			if @strike1
+				@strike2 = true
+				@strike1 = false
+				multi += 1
+			end
+			
+			@round += 1
+			@score += numeric*multi
 
 		end
 	end
